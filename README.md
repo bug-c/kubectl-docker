@@ -1,5 +1,4 @@
-# kubectl-docker
-A minimal Docker image based on Alpine Linux
+Kubectl image for Docker
 ==============
 
 [![Travis CI](https://img.shields.io/travis/bug-c/kubectl-docker/master.svg)](https://travis-ci.org/bug-c/kubectl-docker/branches) 
