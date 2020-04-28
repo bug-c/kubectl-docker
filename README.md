@@ -21,5 +21,7 @@ Thanks
 ------
 
 Thanks to https://github.com/BuoyantIO/kubectl
+
 Thanks to https://github.com/roffe/docker-kubectl
+
 Thanks to https://github.com/bitnami/bitnami-docker-kubectl
