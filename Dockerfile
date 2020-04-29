@@ -6,12 +6,9 @@ ARG K8S_VERSION=v1.18.2
 # Install kubectl
 ADD https://storage.googleapis.com/kubernetes-release/release/$K8S_VERSION/bin/linux/amd64/kubectl /usr/local/bin/kubectl
 
-ENV HOME=/config
-
 RUN set -x && \
-    apk add --no-cache curl ca-certificates && \
+    apk add --no-cache curl ca-certificates bash && \
     chmod +x /usr/local/bin/kubectl 
-
 
 ENTRYPOINT ["/usr/local/bin/kubectl"]
 CMD [ "--help" ]
