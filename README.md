@@ -1,5 +1,4 @@
-Kubectl image for Docker
-==============
+# Kubectl image for Docker
 
 [![Travis CI](https://img.shields.io/travis/bug-c/kubectl-docker/master.svg)](https://travis-ci.org/bug-c/kubectl-docker/branches) 
 [![Docker Pulls](https://img.shields.io/docker/pulls/ctdc/kubectl.svg)](https://hub.docker.com/r/ctdc/kubectl/) 
@@ -11,14 +10,66 @@ Kubectl image for Docker
 
 `kubectl` is a CLI tool to control a cluster [Kubernetes](http://kubernetes.io/).
 
+## Usage
 
-Contributing
-------------
+    $ docker run --rm ctdc/kubectl:latest
 
-I'm always happy to accept [pull requests](https://github.com/bug-c/kubectl-docker/pulls) or [issues](https://github.com/bug-c/kubectl-docker/issues).
+# Get this image
 
-Thanks
-------
+The recommended way to get this Kubectl Docker Image is to pull the prebuilt image from the [Docker Hub Registry](https://hub.docker.com/r/ctdc/kubectl).
+
+```console
+$ docker pull ctdc/kubectl:latest
+```
+
+To use a specific version, you can pull a versioned tag. You can view the [list of available versions](https://hub.docker.com/r/ctdc/kubectl/tags/) in the Docker Hub Registry.
+
+```console
+$ docker pull ctdc/kubectl:[TAG]
+```
+
+If you wish, you can also build the image yourself.
+
+```console
+$ docker build -t ctdc/kubectl:latest 'https://github.com/ctdc/kubectl-docker.git#master'
+```
+
+# Configuration
+
+## Running commands
+
+To run commands inside this container you can use `docker run`, for example to execute `kubectl --version` you can follow the example below:
+
+```console
+$ docker run --rm --name kubectl ctdc/kubectl:latest -- --version
+```
+
+Consult the [Kubectl Reference Documentation](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands) to find the completed list of commands available.
+
+## Loading your own configuration
+
+It's possible to load your own configuration, which is useful if you want to connect to a remote cluster:
+
+```console
+$ docker run --rm --name kubectl -v /path/to/your/kube/config:/.kube/config ctdc/kubectl:latest
+```
+
+# Contributing
+
+You can request new features by creating an [issue](https://github.com/ctdc/kubectl-docker/issues), or submit a [pull request](https://github.com/ctdc/kubectl-docker/pulls) with your contribution.
+
+
+# Issues
+
+If you encountered a problem running this container, you can file an [issue](https://github.com/ctdc/kubectl-docker/issues/new). To provide better support, be sure to include the following information in your issue:
+
+- Host OS and version
+- Docker version (`docker version`)
+- Output of `docker info`
+- Version of this container
+- The command you used to run the container, and any relevant output you saw (masking any sensitive information)
+
+# Thanks
 
 Thanks to https://github.com/BuoyantIO/kubectl
 
