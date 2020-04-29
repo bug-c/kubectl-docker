@@ -31,7 +31,7 @@ $ docker pull ctdc/kubectl:[TAG]
 If you wish, you can also build the image yourself.
 
 ```console
-$ docker build -t ctdc/kubectl:latest 'https://github.com/ctdc/kubectl-docker.git#master'
+$ docker build -t ctdc/kubectl:latest 'https://github.com/bug-c/kubectl-docker.git#master'
 ```
 
 # Configuration
@@ -56,12 +56,12 @@ $ docker run --rm --name kubectl -v /path/to/your/kube/config:/.kube/config ctdc
 
 # Contributing
 
-You can request new features by creating an [issue](https://github.com/ctdc/kubectl-docker/issues), or submit a [pull request](https://github.com/ctdc/kubectl-docker/pulls) with your contribution.
+You can request new features by creating an [issue](https://github.com/bug-c/kubectl-docker/issues), or submit a [pull request](https://github.com/bug-c/kubectl-docker/pulls) with your contribution.
 
 
 # Issues
 
-If you encountered a problem running this container, you can file an [issue](https://github.com/ctdc/kubectl-docker/issues/new). To provide better support, be sure to include the following information in your issue:
+If you encountered a problem running this container, you can file an [issue](https://github.com/bug-c/kubectl-docker/issues/new). To provide better support, be sure to include the following information in your issue:
 
 - Host OS and version
 - Docker version (`docker version`)
