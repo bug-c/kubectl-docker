@@ -51,8 +51,22 @@ Consult the [Kubectl Reference Documentation](https://kubernetes.io/docs/referen
 It's possible to load your own configuration, which is useful if you want to connect to a remote cluster:
 
 ```console
-$ docker run --rm --name kubectl -v /path/to/your/kube/config:/.kube/config ctdc/kubectl:latest
+$ docker run --rm --name kubectl -v /path/to/your/kube/config:/.kube/config -e="KUBECONFIG=/.kube/config" ctdc/kubectl:latest
 ```
+
+If you need to change kube config but you don't want the changes to persist:
+
+```console
+$ docker run --rm --name kubectl --mount type=tmpfs,destination=/.kube -v /path/to/your/kube/config:/.kube/config -e="KUBECONFIG=/.kube/config" ctdc/kubectl:latest
+```
+
+Example of running a custom script:
+
+```console
+$ docker run --rm --name kubectl -v /path/to/your/kube/config:/.kube/config -v /path/to/your/script:/src -w="/src" -e="KUBECONFIG=/.kube/config" --entrypoint="/src/deploy.sh" ctdc/kubectl $SCRIPT_ARGS
+```
+
+
 
 # Contributing
 
